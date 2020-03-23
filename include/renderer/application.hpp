@@ -1,6 +1,6 @@
 #pragma once
 
-#define GLFW_INCLUDE_VULKAN
+#include "vulkan/vulkan.hpp"
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -9,17 +9,17 @@
 namespace odin {
 class Application {
 public:
-    Application();
+  Application();
 
-    void run();
+  void run();
 
 private:
-    void cleanup();
-    void createInstance();
-    void initVulkan();
-    void initWindow();
+  void cleanup();
+  void createInstance();
+  void initVulkan();
+  void initWindow();
 
-    GLFWwindow* window;
-    VkInstance instance;
+  GLFWwindow *window;
+  vk::Instance instance;
 };
-}
+} // namespace odin
